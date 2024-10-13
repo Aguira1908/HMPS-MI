@@ -1,0 +1,143 @@
+/* Overlay and Modal Design */
+.modal-overlay {
+  position: fixed; /* Covers the viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  display: flex; /* Center content */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Bring it to front */
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 100%;
+  z-index: 1001;
+}
+
+/* Card Design */
+.card-heading {
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.card-subtitle {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.input-box {
+  width: calc(100% - 5px); /* Full width minus padding */
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+.input-box:focus {
+  border-color: #1a4c75; /* Change border color on focus */
+}
+
+.forgot-password {
+  font-family: "Montserrat", sans-serif;
+  display: block;
+  margin-top: 0;
+  color: #2e98e5; /* Blue color */
+  font-size: 14px;
+  text-align: left;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.confirm-login-btn {
+  background-color: #32559a; /* Solid background */
+  color: white;
+  width: 80%; /* Button width */
+  height: 40px;
+  max-width: 400px;
+  border: none;
+  border-radius: 26px;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  margin: 20px auto 0;
+  display: block;
+  text-align: center;
+  line-height: 40px; /* Vertical centering */
+  transition: opacity 0.3s;
+}
+
+.confirm-login-btn:hover {
+  opacity: 0.8;
+}
+
+.home-button {
+  background-color: transparent; /* Transparent background */
+  border: 1px solid #32559a; /* Border with same color */
+  border-radius: 26px;
+  color: #32559a;
+  width: 20%;
+  max-width: 400px;
+  padding: 10px;
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  margin: 20px auto 0;
+  display: block;
+  transition: background-color 0.3s;
+}
+
+.home-button:hover {
+  background-color: rgba(50, 85, 154, 0.1); /* Light background */
+}
+
+.sign-in-btn {
+  background-color: transparent; /* Transparent background */
+  border: 1px solid #32559a; /* Border with same color */
+  border-radius: 26px;
+  color: #32559a;
+  width: 60%;
+  max-width: 400px;
+  padding: 10px;
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  margin: 20px auto 0;
+  display: block;
+  transition: background-color 0.3s;
+}
+
+.sign-in-btn:hover {
+  background-color: rgba(50, 85, 154, 0.1); /* Light background */
+}
+
+.another-option-btn-wrapper {
+  margin-top: 50px;
+}
+
+/* Background Blur */
+.blur-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  z-index: 999;
+}

@@ -1,24 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+import "./App.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { useState } from "react";
+// import Home from "./components/home/home";
+import Header from "./components/header/header";
+import Home from "./components/home/home";
+import AboutUs from "./components/aboutUs/aboutUs";
+import LoginModal from "./components/login/login";
+
+const HmpsMi = ({ openLoginModal }) => (
+  <div>
+    <Home openLoginModal={openLoginModal} />
+    <AboutUs />
+  </div>
+);
 
 function App() {
+  const [isLoginModalOpen, setLoginModalOpen] = useState(false);
+
+  // Fungsi untuk membuka modal
+  const openLoginModal = () => setLoginModalOpen(true);
+  // Fungsi untuk menutup modal
+  const closeLoginModal = () => setLoginModalOpen(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Header />
+                <HmpsMi />
+              </>
+            }
+          />
+        </Routes>
+        {isLoginModalOpen && <LoginModal closeLoginModal={closeLoginModal} />}
+      </div>
+    </Router>
   );
 }
 

@@ -1,0 +1,119 @@
+.header-wrapper {
+  /* background-color: lightblue; */
+  /* position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: transparent;
+  display: flex;
+  height: 140px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  transition: background-color 0.3s ease, padding 0.3s ease, height 0.3s ease; Tambahkan transisi untuk tinggi */
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Pastikan di layer paling atas */
+  background-color: transparent;
+  display: flex;
+  height: 140px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  transition: background-color 0.3s ease, padding 0.3s ease, height 0.3s ease;
+}
+
+/* Navbar ketika discroll */
+.header-wrapper.scrolled {
+  background-color: #032852; /* Ubah warna background saat discroll */
+  padding: 10px 20px; /* Kurangi padding saat discroll */
+  height: 40px; /* Tinggi navbar berkurang saat discroll */
+}
+
+.logo {
+  height: 100%; /* Logo otomatis mengikuti tinggi navbar */
+  width: auto;
+  transition: opacity 0.5s ease, transform 0.5s ease, height 0.3s ease; /* Menambahkan transisi untuk opacity, transform, dan height */
+}
+
+/* Ketika scroll, logo disembunyikan dengan opacity dan diperkecil */
+.hide-logo {
+  opacity: 0;
+  transform: scale(0.7); /* Memperkecil logo sedikit */
+  visibility: hidden; /* Logo tetap berada dalam alur tata letak, tapi disembunyikan */
+  height: 0; /* Tinggi logo menjadi 0 agar menyesuaikan dengan navbar */
+}
+
+.header-logo {
+  height: 150px;
+}
+
+ul {
+  list-style: none;
+  width: 40%;
+}
+
+ul li {
+  /* background-color: lightcoral; */
+  display: flex;
+  justify-content: space-around;
+  /* width: 40%; */
+}
+
+ul li a {
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 1s;
+}
+
+.nav-button:hover {
+  color: #f8b179; /* Change text color on hover */
+}
+
+.login-button-wrapper {
+  /* background-color: limegreen; */
+  width: 15%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn-signIn {
+  font-size: 20px; /* Set font size; adjust as needed */
+  font-weight: normal; /* Regular type */
+  padding: 10px 20px; /* Add padding for the button */
+  margin-right: 23px; /* Space between buttons */
+  background-color: transparent; /* No background */
+  color: white; /* Text color */
+  border: none; /* No border */
+  cursor: pointer;
+}
+
+.btn-login {
+  font-size: 20px; /* Set font size; adjust as needed */
+  font-weight: normal; /* Regular type */
+  padding: 10px 20px; /* Add padding for the button */
+  background-color: white; /* Solid white background */
+  color: black; /* Black text color */
+  border: none; /* No border */
+  border-radius: 5px; /* Optional: rounded corners */
+  cursor: pointer;
+}
+
+.btn-login:hover {
+  background-color: #f0f0f0; /* Light gray background on hover */
+}
+
+/* Blur background */
+.blur-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  z-index: 999;
+}

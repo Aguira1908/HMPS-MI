@@ -1,0 +1,63 @@
+.section-aboutUs {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Ini opsional, untuk memastikan section memenuhi seluruh tampilan */
+  background-size: cover; /* Jika menggunakan gambar latar */
+  background-position: center;
+  padding: 80px 30px 0 30px;
+}
+
+.section-aboutUs::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../img/background.png");
+  background-size: cover;
+  background-position: center;
+  mix-blend-mode: multiply;
+  z-index: -1;
+}
+
+.body-title {
+  margin: 0;
+  /* background-color: lightblue; */
+  font-weight: bolder;
+}
+
+.body-title h2 {
+  font-size: 50px;
+  margin: 0;
+}
+
+.body-title h1 {
+  font-size: 70px;
+  font-weight: bold;
+}
+
+.body-main {
+  /* background-color: lightgoldenrodyellow; */
+  width: 50%;
+  font-size: 25px;
+  text-align: center;
+  color: white;
+}
+
+.body-footer {
+  /* background-color: lightgreen; */
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+.body-footer button {
+  background-color: #f4ba09;
+  width: 300px;
+  height: 50px;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  font-size: 20px;
+}
