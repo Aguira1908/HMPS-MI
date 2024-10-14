@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import "./header.css";
 import headerImg from "../../img/headerlogo.png";
 import LoginModal from "../login/login";
+import SignIn from "../signIn/signIn";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalSignInOpen, setIsModalSignInOpen] = useState(false);
 
   const handleScroll = () => {
     const offset = window.scrollY;
@@ -30,6 +32,15 @@ const Header = () => {
   const closeLoginModal = () => {
     setIsModalOpen(false);
   };
+
+  const openSignInModal = () => {
+    setIsModalSignInOpen(true); // Membuka modal
+  };
+
+  const closeSignInModal = () => {
+    setIsModalSignInOpen(false); // Menutup modal
+  };
+
   return (
     <div className={`header-wrapper ${isScrolled ? "scrolled" : ""}`}>
       <img
@@ -42,7 +53,7 @@ const Header = () => {
           <a className="nav-button" href="/">
             Home
           </a>
-          <a className="nav-button" href="#about">
+          <a className="nav-button" href="/about">
             About Us
           </a>
           <a className="nav-button" href="#activity">
@@ -54,11 +65,14 @@ const Header = () => {
         </li>
       </ul>
       <div className="login-button-wrapper">
-        <button className="btn-signIn">Sign-In</button>
+        <button className="btn-signIn" onClick={openSignInModal}>
+          Sign-In
+        </button>
         <button className="btn-login" onClick={openLoginModal}>
           Login
         </button>
       </div>
+      {isModalSignInOpen && <SignIn closeModal={closeSignInModal} />}
 
       {/* Add the modal component here */}
       <LoginModal show={isModalOpen} closeModal={closeLoginModal} />

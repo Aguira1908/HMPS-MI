@@ -32,7 +32,7 @@ const LoginModal = ({ show, closeModal }) => {
 
           <button className="confirm-login-btn">Login</button>
           <div className="another-option-btn-wrapper">
-            <button className="sign-in-btn">Login</button>
+            <button className="sign-in-btn">Sign In</button>
             <button className="home-button" onClick={closeModal}>
               Close
             </button>

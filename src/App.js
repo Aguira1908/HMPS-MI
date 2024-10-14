@@ -7,11 +7,13 @@ import Header from "./components/header/header";
 import Home from "./components/home/home";
 import AboutUs from "./components/aboutUs/aboutUs";
 import LoginModal from "./components/login/login";
+import Activity from "./components/activity/activity";
 
 const HmpsMi = ({ openLoginModal }) => (
   <div>
     <Home openLoginModal={openLoginModal} />
     <AboutUs />
+    <Activity />
   </div>
 );
 
