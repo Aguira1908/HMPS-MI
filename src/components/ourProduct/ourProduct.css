@@ -1,0 +1,95 @@
+.section-ourProduct {
+  /* text-align: center;
+  margin-top: -50px;
+  padding: 50px 20px; */
+
+  margin: 0;
+  padding: 0 40px;
+  padding-top: 50px;
+  height: 100vh; /* Ini opsional, untuk memastikan section memenuhi seluruh tampilan */
+  background-size: cover; /* Jika menggunakan gambar latar */
+  background-position: center;
+  position: relative;
+}
+
+.section-ourProduct::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../img/background.png");
+  background-size: cover;
+  background-position: center;
+  mix-blend-mode: multiply;
+  z-index: -1;
+}
+
+.section-ourProduct h1 {
+  font-size: 48px;
+  margin-bottom: 50px;
+  color: white;
+  font-weight: 900;
+}
+
+.products-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.products {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.product {
+  background: white;
+  color: black;
+  border-radius: 15px;
+  margin: 0 20px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  flex-shrink: 0;
+}
+
+.product img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+/* Tombol panah kiri dan kanan */
+.arrow {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background-color: transparent; /* Latar belakang transparan */
+  color: #007bff; /* Warna biru untuk panah */
+  font-size: 48px; /* Ukuran panah besar */
+  z-index: 9999; /* Pastikan tombol di atas semua elemen */
+  transition: color 0.3s ease; /* Transisi halus untuk hover */
+  display: block; /* Pastikan tombol tampil */
+  width: auto; /* Panah tetap fleksibel sesuai ukuran konten */
+  height: auto;
+}
+
+/* Hover untuk efek panah */
+.arrow:hover {
+  color: #0056b3; /* Warna biru lebih gelap saat hover */
+}
+
+.arrow.left {
+  left: 20px; /* Jarak dari sisi kiri */
+}
+
+.arrow.right {
+  right: 20px; /* Jarak dari sisi kanan */
+}
+
+.arrow i {
+  pointer-events: none; /* Pastikan ikon dapat diklik */
+}

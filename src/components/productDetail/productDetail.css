@@ -1,0 +1,100 @@
+.section-produk-detail {
+  padding: 0 50px;
+  margin: 0;
+  height: 100vh; /* Ini opsional, untuk memastikan section memenuhi seluruh tampilan */
+  background-size: cover; /* Jika menggunakan gambar latar */
+  background-position: center;
+  position: relative;
+}
+
+.section-produk-detail::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../img/background.png");
+  background-size: cover;
+  background-position: center;
+  mix-blend-mode: multiply;
+  z-index: -1;
+}
+.back-link {
+  color: white;
+  font-size: 20px;
+  padding-top: 20px;
+}
+
+.title-produk-detail {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: white;
+  font-weight: 800;
+}
+
+.content-produk-detail {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  gap: 20px; /* Menambahkan gap antara left-section dan right-section */
+}
+
+.left-section-produk-detail,
+.right-section-produk-detail {
+  width: 48%; /* Masing-masing bagian mendapatkan 48% dari lebar container */
+  background-color: #f2f2f2; /* Beri background berbeda untuk membedakan */
+  padding: 20px; /* Memberi padding pada masing-masing box */
+  border-radius: 10px; /* Membuat ujung kotak melengkung */
+}
+
+.left-section-produk-detail {
+  display: flex;
+  flex-wrap: wrap; /* Allows images to wrap if they exceed container width */
+  justify-content: flex-start; /* Align images to the start */
+}
+
+.left-section-produk-detail img {
+  margin: 10px; /* Optional margin to space out the images */
+  width: calc(
+    50% - 20px
+  ); /* Ensures two images can fit side by side with a 10px margin */
+}
+
+.right-section-produk-detail h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.right-section-produk-detail p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.price {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.purchase-button {
+  background-color: #002855;
+  color: white;
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%; /* Add this */
+  box-sizing: border-box; /* Ensures padding doesn't affect the width */
+}
+
+.btn-selengkapnya {
+  cursor: pointer;
+}
+
+.btn-selengkapnya:hover {
+  color: #002855;
+}

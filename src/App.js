@@ -8,12 +8,17 @@ import Home from "./components/home/home";
 import AboutUs from "./components/aboutUs/aboutUs";
 import LoginModal from "./components/login/login";
 import Activity from "./components/activity/activity";
+import OurProduct from "./components/ourProduct/ourProduct";
+import ProductDetail from "./components/productDetail/productDetail";
+import DetailProductModal from "./components/detailProductModal/detailProductModal";
 
 const HmpsMi = ({ openLoginModal }) => (
   <div>
-    <Home openLoginModal={openLoginModal} />
+    {/* <Home openLoginModal={openLoginModal} /> */}
+    <Home />
     <AboutUs />
     <Activity />
+    <OurProduct />
   </div>
 );
 
@@ -21,9 +26,9 @@ function App() {
   const [isLoginModalOpen, setLoginModalOpen] = useState(false);
 
   // Fungsi untuk membuka modal
-  const openLoginModal = () => setLoginModalOpen(true);
+  // const openLoginModal = () => setLoginModalOpen(true);
   // Fungsi untuk menutup modal
-  const closeLoginModal = () => setLoginModalOpen(false);
+  // const closeLoginModal = () => setLoginModalOpen(false);
   return (
     <Router>
       <div className="App">
@@ -37,8 +42,9 @@ function App() {
               </>
             }
           />
+          <Route path="/productDetail" element={<ProductDetail />} />
         </Routes>
-        {isLoginModalOpen && <LoginModal closeLoginModal={closeLoginModal} />}
+        {/* {isLoginModalOpen && <LoginModal closeLoginModal={closeLoginModal} />} */}
       </div>
     </Router>
   );

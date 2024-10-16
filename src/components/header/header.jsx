@@ -53,7 +53,7 @@ const Header = () => {
           <a className="nav-button" href="/">
             Home
           </a>
-          <a className="nav-button" href="/about">
+          <a className="nav-button" href="#about">
             About Us
           </a>
           <a className="nav-button" href="#activity">
