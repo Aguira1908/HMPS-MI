@@ -81,7 +81,8 @@ ul li a {
   justify-content: space-around;
 }
 
-.btn-signIn {
+.btn-signIn,
+.btn-logout {
   font-size: 20px; /* Set font size; adjust as needed */
   font-weight: normal; /* Regular type */
   padding: 10px 20px; /* Add padding for the button */

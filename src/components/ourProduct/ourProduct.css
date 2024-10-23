@@ -93,3 +93,9 @@
 .arrow i {
   pointer-events: none; /* Pastikan ikon dapat diklik */
 }
+
+.produk-tumbler,
+.produk-jaket {
+  display: flex;
+  align-items: center;
+}

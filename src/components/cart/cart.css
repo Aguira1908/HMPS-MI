@@ -1,0 +1,150 @@
+.section-cart {
+  max-width: px;
+  margin: 50px 50px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.back-cart {
+  color: #fff;
+  background-color: ime;
+  margin-bottom: 60px;
+  position: relative;
+  top: 49px;
+  display: block;
+  text-align: left;
+  margin-left: 50px;
+}
+
+.title-cart {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.subtitle-cart {
+  font-size: 14px;
+  text-align: left;
+  margin-left: 50px;
+  color: #666;
+}
+
+.line-cart {
+  margin-top: 10px;
+  border-bottom: 2px solid #000;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.price-cart {
+  font-size: 24px;
+  text-align: left;
+  margin: 20px 0;
+}
+
+.product-section-cart {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-image-cart {
+  flex: 1;
+  max-width: 300px;
+}
+
+.product-details-cart {
+  flex: 2;
+  padding-left: 20px;
+}
+
+.quantity-control-cart {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.quantity-control-cart button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.quantity-control-cart input {
+  width: 50px;
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 0 10px;
+}
+
+.checkbox-container-cart {
+  display: flex;
+  align-items: flex-start; /* Align items at the start */
+  flex-direction: column; /* Stack label and note vertically */
+  margin: 20px 0;
+}
+
+.checkbox-container-cart label {
+  font-size: 24px;
+  margin-left: 20px;
+}
+
+.checkbox-container-cart input {
+  margin-top: 20px;
+  transform: scale(2);
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.checkbox-wrapper-cart {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align items horizontally */
+}
+
+.note-cart {
+  font-size: 15px;
+  color: #666;
+  margin-left: 54px; /* Align the note under the label and checkbox */
+  margin-top: -10px; /* Add some space between label and note */
+}
+.note2-cart {
+  font-size: 20px;
+}
+
+.total-checkout-container-cart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.total-cart {
+  font-size: 24px;
+  flex: 1;
+  text-align: center;
+  border: 2px solid #001f54;
+  padding: 15px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.checkout-button-cart {
+  background-color: #001f54;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  font-size: 18px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 5px;
+  flex: 1;
+  margin-left: 10px;
+}

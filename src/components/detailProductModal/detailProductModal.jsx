@@ -1,21 +1,22 @@
 import React from "react";
 import "./detailProductModal.css";
 import backImg from "../../img/back.png";
+import { Navigate } from "react-router-dom";
 
-const DetailProductModal = ({ show, closeModal }) => {
+const DetailProductModal = ({ show, closeModal, productData }) => {
   if (!show) return null;
 
   return (
     <section className="section-detail-modal">
       <div className="top-wrapper-detail-modal">
         <div className="topleft-detail-modal">
-          <div className="title-detail-modal">
-            ID CARD MANAJEMEN INFORMATIKA
-          </div>
+          <div className="title-detail-modal">{productData.judul_produk}</div>
           <div className="subtitle-detail-modal">
-            Item Stock : 25 | Terjual : xx
+            Item Stock : {productData.stok_produk} | Terjual : xx
           </div>
-          <div className="price-detail-modal">Rp 30.000</div>
+          <div className="price-detail-modal">
+            Rp {productData.harga_produk}
+          </div>
         </div>
         <div className="topright-detail-modal">
           <img

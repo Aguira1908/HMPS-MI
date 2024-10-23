@@ -1,13 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./header.css";
 import headerImg from "../../img/headerlogo.png";
 import LoginModal from "../login/login";
 import SignIn from "../signIn/signIn";
+import { AuthContext } from "../../context/authContext";
 
 const Header = () => {
+  const { auth, setAuth } = useContext(AuthContext);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalSignInOpen, setIsModalSignInOpen] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(!!auth); // Cek apakah sudah login
 
   const handleScroll = () => {
     const offset = window.scrollY;
@@ -41,6 +44,23 @@ const Header = () => {
     setIsModalSignInOpen(false); // Menutup modal
   };
 
+  const handleLogOut = () => {
+    setAuth(null);
+    setIsAuthenticated(false);
+    alert("Log out Successfully");
+  };
+
+  const handleSignInSuccess = () => {
+    closeSignInModal();
+    openLoginModal();
+  };
+
+  const handleLoginSuccess = (token) => {
+    setAuth(token);
+    setIsAuthenticated(true);
+    closeLoginModal();
+  };
+
   return (
     <div className={`header-wrapper ${isScrolled ? "scrolled" : ""}`}>
       <img
@@ -65,18 +85,36 @@ const Header = () => {
         </li>
       </ul>
       <div className="login-button-wrapper">
-        <button className="btn-signIn" onClick={openSignInModal}>
-          Sign-In
-        </button>
-        <button className="btn-login" onClick={openLoginModal}>
-          Login
-        </button>
+        {isAuthenticated ? (
+          <button className="btn-logout" onClick={handleLogOut}>
+            Logout
+          </button>
+        ) : (
+          <>
+            <button className="btn-signIn" onClick={openSignInModal}>
+              Sign-In
+            </button>
+            <button className="btn-login" onClick={openLoginModal}>
+              Login
+            </button>
+          </>
+        )}
       </div>
-      {isModalSignInOpen && <SignIn closeModal={closeSignInModal} />}
+      {isModalSignInOpen && (
+        <SignIn
+          closeModal={closeSignInModal}
+          onSignInSuccess={handleSignInSuccess}
+        />
+      )}
+      <LoginModal
+        show={isModalOpen}
+        closeModal={closeLoginModal}
+        onLoginSuccess={handleLoginSuccess}
+      />
+      {/* {isModalSignInOpen && <SignIn closeModal={closeSignInModal} />}
 
       {/* Add the modal component here */}
-      <LoginModal show={isModalOpen} closeModal={closeLoginModal} />
-
+      {/* <LoginModal show={isModalOpen} closeModal={closeLoginModal} /> */} */}
       {/* Apply background blur when modal is open */}
       {isModalOpen && <div className="blur-background"></div>}
     </div>

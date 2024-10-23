@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../../context/authContext";
+import { register } from "../../services/authService";
 import "./signIn.css";
 
-const SignIn = ({ closeModal }) => {
+const SignIn = ({ closeModal, onSignInSuccess }) => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleRegister = async () => {
+    try {
+      const data = await register(username, password);
+      alert("User registered successfully!");
+      onSignInSuccess();
+    } catch (error) {
+      alert("Error registering user");
+    }
+  };
   return (
     <div className="modal">
       <div className="modal-content">
@@ -18,7 +32,8 @@ const SignIn = ({ closeModal }) => {
             type="text"
             id="contact-info"
             className="input-box"
-            placeholder="*Email or Phone"
+            placeholder="Username"
+            onChange={(e) => setUsername(e.target.value)}
           />
 
           <label className="input-label" htmlFor="password">
@@ -29,19 +44,12 @@ const SignIn = ({ closeModal }) => {
             id="password"
             className="input-box"
             placeholder="*Password"
+            onChange={(e) => setPassword(e.target.value)}
           />
 
-          <label className="input-label" htmlFor="repeat-password">
-            Repeat Password
-          </label>
-          <input
-            type="password"
-            id="repeat-password"
-            className="input-box"
-            placeholder="*Repeat password"
-          />
-
-          <button className="confirm-sign-in-button">Sign In</button>
+          <button className="confirm-sign-in-button" onClick={handleRegister}>
+            Sign In
+          </button>
           <button className="home-button" onClick={closeModal}>
             Close
           </button>

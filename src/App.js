@@ -11,6 +11,8 @@ import Activity from "./components/activity/activity";
 import OurProduct from "./components/ourProduct/ourProduct";
 import ProductDetail from "./components/productDetail/productDetail";
 import DetailProductModal from "./components/detailProductModal/detailProductModal";
+import Cart from "./components/cart/cart";
+import { AuthProvider } from "./context/authContext";
 
 const HmpsMi = ({ openLoginModal }) => (
   <div>
@@ -29,24 +31,30 @@ function App() {
   // const openLoginModal = () => setLoginModalOpen(true);
   // Fungsi untuk menutup modal
   // const closeLoginModal = () => setLoginModalOpen(false);
+
+  const openLoginModal = () => setLoginModalOpen(true);
+  const closeLoginModal = () => setLoginModalOpen(false);
   return (
-    <Router>
-      <div className="App">
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Header />
-                <HmpsMi />
-              </>
-            }
-          />
-          <Route path="/productDetail" element={<ProductDetail />} />
-        </Routes>
-        {/* {isLoginModalOpen && <LoginModal closeLoginModal={closeLoginModal} />} */}
-      </div>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <div className="App">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <Header />
+                  <HmpsMi />
+                </>
+              }
+            />
+            <Route path="/productDetail" element={<ProductDetail />} />
+            <Route path="/cart" element={<Cart />} />
+          </Routes>
+          {/* {isLoginModalOpen && <LoginModal closeLoginModal={closeLoginModal} />} */}
+        </div>
+      </Router>
+    </AuthProvider>
   );
 }
 

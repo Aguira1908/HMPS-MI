@@ -1,5 +1,10 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
+import lanyard from "../../img/MOCKUPlanyard3 3.jpg";
+import keyChain from "../../img/MANAJEMEN INFORMATIKA (1).png";
+import tumbler from "../../img/desain tumblr e bisnis 2.png";
+import workJacket from "../../img/workjacket.png";
+import topi from "../../img/MANAJEMEN INFORMATIKA.png";
 
 import "./ourProduct.css";
 
@@ -57,7 +62,7 @@ const OurProduct = () => {
             <img
               alt="Lanyard with ID card and design"
               height="400"
-              src="https://storage.googleapis.com/a1aa/image/eqeS2W1ssKnPYEOGSXHt2ZFBTsf2kEnf3yrYKO1K9ULLGwWOB.jpg"
+              src={lanyard}
               width="300"
               onClick={() => pilihanProduct("Lanyard")}
             />
@@ -66,38 +71,38 @@ const OurProduct = () => {
             <img
               alt="Keychain"
               height="400"
-              src="https://storage.googleapis.com/a1aa/image/gUgfvEyqsdwufUa5yqFRVLEWfYOS1EPTARMh7blzSfZsZxWOB.jpg"
+              src={keyChain}
               width="300"
               onClick={() => pilihanProduct("Gantungan Kunci")}
             />
           </div>
-          <div className="product">
+          <div className="product produk-tumbler">
             <img
               alt="White and black bottles with text and logo"
-              height="400"
-              src="https://storage.googleapis.com/a1aa/image/2ccirQpn904MNdQBoz1kQoFXkIBH0p5NfTScWDc0nLhwA2yJA.jpg"
+              src={tumbler}
               width="300"
+              height="auto"
               onClick={() => pilihanProduct("Tumbler")}
             />
           </div>
-          <div className="product">
+          <div className="product produk-jaket">
             <img
               alt="Jacket"
-              height="400"
-              src="https://storage.googleapis.com/a1aa/image/PhEtqrTKDCrpKBxb40qE02g3H4NosVZmkGASxZ3eISB5L2yJA.jpg"
+              src={workJacket}
               width="300"
+              height="auto"
               onClick={() => pilihanProduct("Jahim")}
             />
           </div>
-          <div className="product">
+          {/* <div className="product">
             <img
               alt="Hat"
               height="400"
-              src="https://storage.googleapis.com/a1aa/image/v4I1RKFtNn6FNNOU054WB2aOKkf1MDzGHA6rFdz3N994L2yJA.jpg"
               width="300"
+              src={topi}
               onClick={() => pilihanProduct("Topi")}
             />
-          </div>
+          </div> */}
         </div>
         <div className="arrow right" onClick={slideRight}>
           <i className="fas fa-chevron-right"></i>
